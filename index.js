@@ -60,6 +60,7 @@ setInterval(()=>{
     
     })},1000)
 
+// function for adding alarm
 function addAlarm(time){
     let isAlarmExist=alarms.some((alarm,index)=>{
         return alarm.time==time;
@@ -75,12 +76,13 @@ function addAlarm(time){
    
     renderAlarms();
 }
-
+// function for deleting alarm
 function deleteAlarm(index){
     alarms.splice(index, 1);
     renderAlarms();
 }
 
+// function for rendering alarm list
 function renderAlarms(){
     alarmList.innerHTML = "";
     alarms.forEach((alarm, index) => {

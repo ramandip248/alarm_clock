@@ -32,10 +32,7 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.select-container.disable{
-    opacity:0.6;
-    pointer-events: none;
-}
+
 .select-time{
      width: 25%;
      height:32px;
@@ -52,8 +49,14 @@ body{
     text-align: center;
     color: blueviolet;
 }
-.container button{
-   width: 100%;
+.alarm-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#set-alarm{
+   width: 35%;
    margin-top: 10px;
    padding: 8px;
    background: blueviolet;
@@ -62,7 +65,59 @@ body{
    font-size: 20px;
    cursor: pointer
 }
+#stop-alarm{
+    width: 35%;
+    margin-top: 10px;
+    padding: 8px;
+    background: blueviolet;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer
+ }
 
-.container button:hover{
+#set-alarm:hover{
+    background: rgba(128, 0, 128, 0.763);
+}
+#stop-alarm:hover{
+    background: rgba(128, 0, 128, 0.763);
+}
+#alarm-list-title{
+    color: blueviolet;
+    font-weight: 600;
+}
+#alarm-list{
+    list-style-type :none;
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+#alarm-list li{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+
+}
+#alarm-list li p{
+    width : 30%;
+    font-size: 20px;
+    font-weight: 600;
+    color: blueviolet;
+    padding: 0;
+    margin: 0;
+}
+
+#alarm-list li button{
+    width:20%;
+    height:30px;
+    background: blueviolet;
+    padding: 0;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 14px;
+}
+#alarm-list li button:hover{
     background: rgba(128, 0, 128, 0.763);
 }

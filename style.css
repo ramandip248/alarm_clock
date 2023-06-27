@@ -73,7 +73,8 @@ body{
     color: whitesmoke;
     border-radius: 5px;
     font-size: 20px;
-    cursor: pointer
+    cursor: pointer;
+    display:none;
  }
 
 #set-alarm:hover{
@@ -117,6 +118,7 @@ body{
     border-radius: 5px;
     color: whitesmoke;
     font-size: 14px;
+    cursor:pointer;
 }
 #alarm-list li button:hover{
     background: rgba(128, 0, 128, 0.763);

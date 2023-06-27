@@ -46,17 +46,16 @@ setInterval(()=>{
    second=second<10?"0"+second:second;
    clock.innerText = `${hour}:${minute}:${second} ${timeIndication}`;
 
-   if (isAlarmRinging) {
-    return;
-}
+ 
 // If the current time matches the alarm time, the ringtone audio is played in a loop.
   alarms.forEach((alarm,index)=>{
-    if(alarm.time == `${hour}:${minute} ${timeIndication}`&& !alarm.ringing && !isAlarmRinging){
+    if(alarm.time == `${hour}:${minute} ${timeIndication}`&& !alarm.ringing){
         console.log("ringing");
         alarms[index].ringing = true;
         ringtone.play();
         ringtone.loop = true;
         isAlarmRinging = true;
+        stopAlarmButton.style.display = "block";
        }
     
     })},1000)
@@ -66,7 +65,7 @@ function addAlarm(time){
         return alarm.time==time;
     })
     if(isAlarmExist){
-          alert("Alarm is already set");
+          alert(`Alarm for ${time} is already set`);
     }else{
         alarms.push({
             time: time,
@@ -103,14 +102,14 @@ function renderAlarms(){
 
 // This function is called when the stopAlarm button is clicked.
 function stopAlarm(){
+    
     if(isAlarmRinging){
-      
-        ringtone.pause();
+        isAlarmRinging=false;
         alarms.forEach((alarm) => {
-            alarm.ringing = false;
+            ringtone.pause();
         });
     }
-   
+    stopAlarmButton.style.display = "none";
    
 }
 // This function is called when the alarm button is clicked.
